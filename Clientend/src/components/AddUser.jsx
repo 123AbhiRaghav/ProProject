@@ -29,8 +29,9 @@ const AddUser = ({ open, setOpen, userData }) => {
         const result = await updateUser(data).unwrap()
         toast.success("Profile Updated Successfully")
          
-        if(userData?._id === user>_id){
+        if(userData?._id === user._id){
           dispatch(setCredentials({...result.user}))
+          localStorage.setItem("token", result.token)
         }
       } else {
              await addNewUser({

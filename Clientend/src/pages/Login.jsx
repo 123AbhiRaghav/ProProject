@@ -24,7 +24,9 @@ const Login = () => {
   const submitHandler = async (data) => {
     try{
       const result = await login(data).unwrap();
-     dispatch(setCredentials(result))
+      console.log(result)
+     dispatch(setCredentials(result.user))
+     localStorage.setItem("token", result.token)
       navigate("/")
       console.log(result)
     } catch (error) {

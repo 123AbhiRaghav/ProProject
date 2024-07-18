@@ -28,7 +28,9 @@ const Users = () => {
        isActive: !selected?. isActive,
        id: selected?._id,
       });
+      console.log(result)
       refetch();
+      localStorage.setItem("token", result.token)
       toast.success(result.data.message);
       setSelected(null)
       setTimeout(() => {

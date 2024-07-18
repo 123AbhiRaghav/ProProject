@@ -9,6 +9,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
                 url: `${TASKS_URL}/dashboard`,
                 method:"GET",
                 credentials: "include",
+                headers: {"token": localStorage.getItem("token")}
             }),
         }),
 
@@ -17,6 +18,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
             url: `${TASKS_URL}?stage=${strQuery}&isTrashed=${isTrashed}&search=${search}`,
             method:"GET",
             credentials: "include",
+            headers: {"token": localStorage.getItem("token")}
         }),
     }),
 
@@ -26,6 +28,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
             method:"POST",
             body: data,
             credentials: "include",
+            headers: {"token": localStorage.getItem("token")}
         }),
     }),
 
@@ -35,6 +38,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
             method: "POST",
             body: {},
             credentials:"include",
+            headers: {"token": localStorage.getItem("token")}
         }),
     }),
 
@@ -44,6 +48,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
             method: "PUT",
             body: data,
             credentials: "include",
+            headers: {"token": localStorage.getItem("token")}
         }),
      }),
 
@@ -52,6 +57,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
             url: `${TASKS_URL}/${id}`,
             method: "PUT",
             credentials: "include",
+            headers: {"token": localStorage.getItem("token")}
         }),
      }),
 
@@ -61,6 +67,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
             method: "PUT",
             body: data,
             credentials: "include",
+            headers: {"token": localStorage.getItem("token")}
         }),
      }),
 
@@ -69,6 +76,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
             url: `${TASKS_URL}/delete-restore/${id}?actionType=${actionType}`,
             method: "DELETE",
             credentials: "include",
+            headers: {"token": localStorage.getItem("token")}
         }),
      }),
 
@@ -77,6 +85,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
             url: `${TASKS_URL}/${id}`,
             method: "GET",
             credentials: "include",
+            headers: {"token": localStorage.getItem("token")}
         }),
      }),
 
@@ -86,6 +95,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
             method: "POST",
             body: data,
             credentials: "include",
+            headers: {"token": localStorage.getItem("token")}
         }),
      }),
     }),

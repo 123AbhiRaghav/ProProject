@@ -64,11 +64,11 @@ export const loginUser = async (req, res) => {
     const isMatch = await user.matchPassword(password);
 
     if (user && isMatch) {
-      createJWT(res, user._id);
+    const token  =   createJWT(res, user._id);
 
       user.password = undefined;
 
-      res.status(200).json(user);
+      res.status(200).json({user, token});
     } else {
       return res
         .status(401)

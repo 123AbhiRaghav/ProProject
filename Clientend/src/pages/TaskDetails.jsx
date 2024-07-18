@@ -257,6 +257,7 @@ const Activities = ({ activity, id , refetch}) => {
       setText("")
       toast.success(result?.message)
       refetch()
+      localStorage.setItem("token", result.token)
    } catch (error) {
       console.log(error)
       toast.error(error?.data?.message || error.error)
